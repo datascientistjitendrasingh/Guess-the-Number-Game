@@ -1,0 +1,22 @@
+import random
+def guess_the_num():
+    secret_num = random.randint(1,200)
+    max_attempts = 10
+    print("Welcome to the KBC!")
+    print(f"Guess the number {secret_num} secret num in {max_attempts} attempts.")
+    
+    for attempts in range(1,max_attempts + 1):
+        Guess_num = int(input("Enter the number: "))
+        if Guess_num==secret_num:
+            print(f"you won the game! and the  secret num is this {secret_num} ")
+            break
+        else:
+            if Guess_num < secret_num:
+                print("Try Upper Num!: ")
+            elif Guess_num > secret_num:
+                print("Try Lower Num!: ")
+        
+        if attempts == max_attempts:
+            print(f"sorry you loss the game! secret num is this {secret_num} Try luck next time!.")
+if __name__=="__main__":
+    guess_the_num()
